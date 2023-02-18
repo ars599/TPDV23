@@ -17,7 +17,7 @@ please try to play the code. if you have any question please leave message at is
 
 * The isopycnal script is mimic from the isothermo scirpt
      to obtain the final isopycnal out Research Assistent, An-yi Huang, from University Taipei has modified to fix for the purpose
-     more details please email An-yi Huang  b810641@gmail.com
+     more details please email An-yi Huang  (b810641@gmail.com) 
 % https://au.mathworks.com/matlabcentral/fileexchange/41733-3d-surface-plot-for-data-visualization
 % https://au.mathworks.com/matlabcentral/fileexchange/53372-isotherms-computation?s_tid=FX_rc2_behav
 
@@ -32,8 +32,27 @@ please try to play the code. if you have any question please leave message at is
 ** How to use it
  
 ```
+1) From NetCDF
+fn='so_oras4_1m_1958-2015_grid_1x1_mean.nc';
+lev=ncread(fn,'depth'); nlev=size(lev,1);
+lon=ncread(fn,'lon'); nlon=size(lon,1);
+lat=ncread(fn,'lat'); nlat=size(lat,1);
+[lonn,latt]=meshgrid(lon,lat);
+SA = ncread(fn,'so');
 
+fn='thetao_oras4_1m_1958-2015_grid_1x1.mean.nc';
+CT = ncread(fn,'thetao');
 
+save('an_yi.mat','SA','CT','lon','lat','lvl')
+
+2) From mat file
+load an_yi.mat
+
+3) calculate the sigma then calculate isopycnal
+sigma0 = gsw_sigma0(SA,CT);
+iso20=ra_isopycnal(sigma0,Z,isovalue);
+
+*** get_sigma_v3.m is the final version
 
 ```
 
