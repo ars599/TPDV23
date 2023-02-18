@@ -5,7 +5,7 @@
 % https://www.teos-10.org/
 %* The isopycnal script is mimic from the isothermo scirpt
 %*     to obtain the final isopycnal out Research Assistent, An-yi Huang, from University Taipei has modified to fix for the purpose
-%*     more details please email An-yi Huang 
+%*     more details please email An-yi Huang b810641@gmail.com
 % https://au.mathworks.com/matlabcentral/fileexchange/41733-3d-surface-plot-for-data-visualization
 % https://au.mathworks.com/matlabcentral/fileexchange/53372-isotherms-computation?s_tid=FX_rc2_behav
 %* We then also download the script for colour map
